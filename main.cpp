@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.h>
+#include <string.h>
 //1.输入一个五位的正整数，输出其逆数。例如输入12345，输出应为54321。
 //int main() {
 //    int num, reverse = 0;
@@ -161,23 +161,171 @@
 //}
 
 //14.输入10个数，分别统计其中正数、负数、零的个数。
+//int main(){
+//    double a[10];
+//    int i;
+//    int zheng=0,fu=0,zero=0;
+//    printf("请输入10个数:");
+//    for (i = 0; i < 10; ++i) {
+//        scanf("%lf",&a[i]);
+//    }
+//    for (i= 0; i < 10; ++i) {
+//        if(a[i]>0)
+//            zheng++;
+//        else if(a[i]<0)
+//            fu++;
+//        else
+//            zero++;
+//    }
+//    printf("正数有%d个\n",zheng);
+//    printf("负数有%d个\n",fu);
+//    printf("0有%d个",zero);
+//}
+
+//15.先随机产生N个三位自然数输出，然后再输出其中同时是3、5、7倍数的数。（设N为500）
+
+//16.用for编程找出100~200中的完全平方数。
+//int main(){
+//    for (int i = 100; i < 200; ++i) {
+//        for (int j = 10; j < sqrt(200); ++j) {
+//            if(i==j*j)
+//                printf("%d\n",i);
+//        }
+//    }
+//}
+
+//17.从终端输入三个正整数，判断这三个数能否构成直角三角形。
+
+
+
+//25.从键盘输入两个字串，输出其中较短的那个字串，并输出它的长度。
+//int main() {
+//    char a[1000];
+//    char b[1000];
+//    printf("请输入两个字符串：");
+//    scanf("%s", a);
+//    scanf("%s", b);
+//    int la = strlen(a);
+//    int lb = strlen(b);
+//    if (la < lb) {
+//        printf("%s\n", a);
+//        printf("%d\n", la);
+//    } else {
+//        printf("%s\n", b);
+//        printf("%d\n", lb);
+//    }
+//    return 0;
+//}
+
+//26.从键盘输入长度不等的两个字串，将短串连接于长串之后输出。
+//int main() {
+//    char a[1000];
+//    char b[1000];
+//    printf("请输入两个长度不等的字符串：");
+//    scanf("%s", a);
+//    scanf("%s", b);
+//    int la = strlen(a);
+//    int lb = strlen(b);
+//    if(la>lb)
+//        printf("%s",strcat(a,b));
+//    else
+//        printf("%s",strcat(b,a));
+//}
+
+//27.从键盘输入长度不等的两个字串，将长串连接于短串之后输出。
+/*
+int main() {
+    char a[1000];
+    char b[1000];
+    printf("请输入两个长度不等的字符串：");
+    scanf("%s", a);
+    scanf("%s", b);
+    int la = strlen(a);
+    int lb = strlen(b);
+    if(lb>la)
+        printf("%s",strcat(a,b));
+    else
+        printf("%s",strcat(b,a));
+}*/
+
+//30.从键盘输入10个战士的身高，输出平均身高，并找出哪些身高低于平均身高
+//int main(){
+//double height[10];
+//double total;
+//double average;
+//    printf("请输入十个战士的身高：");
+//    for (int i = 0; i < 10; ++i) {
+//        scanf("%lf",&height[i]);
+//    }
+//    for (int i = 0; i < 10; ++i) {
+//        total+=height[i];
+//    }
+//    printf("平均身高是：%lf\n",total/10);
+//    for (int i = 0; i < 10; ++i) {
+//        if(height[i]<total/10)
+//            printf("%lf",height[i]);
+//    }
+//}
+
+//31.从键盘输入10个战士的身高，输出平均身高，并找出哪些身高高于平均身高。
+//int main(){
+//double height[10];
+//double total;
+//double average;
+//    printf("请输入十个战士的身高：");
+//    for (int i = 0; i < 10; ++i) {
+//        scanf("%lf",&height[i]);
+//    }
+//    for (int i = 0; i < 10; ++i) {
+//        total+=height[i];
+//    }
+//    printf("平均身高是：%lf\n",total/10);
+//    for (int i = 0; i < 10; ++i) {
+//        if(height[i]>+total/10)
+//            printf("%lf",height[i]);
+//    }
+//}
+
+//32.从键盘输入10个战士的身高，输出最高、最低的身高。
+//int main() {
+//    double height[10];
+//    double max = -1e9;
+//    double min = 1e9;
+//    printf("请输入十个战士的身高：");
+//    for (int i = 0; i < 10; ++i) {
+//        scanf("%lf", &height[i]);
+//    }
+//    for (int i = 0; i < 10; ++i) {
+//        if (height[i] > max)
+//            max = height[i];
+//        if (height[i] < min)
+//            min = height[i];
+//    }
+//    printf("最高的是%.2lf\n", max);
+//    printf("最低的是%.2lf\n", min);
+//    return 0;
+//}
+
+//33.“百钱百鸡”问题。百钱买百鸡，鸡翁一值钱三，鸡母一值钱二，鸡雏三值钱一，问鸡翁、鸡母、鸡雏各几何？
+//int main() {
+//    for (int a = 0; a <= 100; ++a) {
+//        for (int b = 0; b <= 100; ++b) {
+//            int c = 100 - a - b;
+//            if ((a + b + c == 100) && (3 * a + 2 * b + c / 3 == 100))
+//                printf("鸡翁：%d只，鸡母：%d只，鸡雏：%d只\n", a, b, c);
+//        }
+//    }
+//}
+
+//42.设N是一个四位数，它的9倍恰好是其反序数，求N。反序数就是将整数的数字倒过来形成的整数。例如：1234的反序数是4321。
 int main(){
-    double a[10];
-    int i;
-    int zheng,fu,zero;
-    printf("请输入10个数:");
-    for (i = 0; i < 10; ++i) {
-        scanf("%lf",&a[i]);
-    }
-    for (i= 0; i < 10; ++i) {
-        if(a[i]>0)
-            zheng++;
-        else if(a[i]<0)
-            fu++;
-        else
-            zero++;
-    }
-    printf("正数有%d个\n",zheng);
-    printf("负数有%d个\n",fu);
-    printf("0有%d个",zero);
-};
+    int n,shi,bai,qian;
+    for (int r = 9001; r < 10000; r=r+10) {
+            shi=r/10%10;
+            bai=r/100%10;
+            qian=r/1000;
+            n=1000+shi*100+bai*10+1;
+            if(r=9*n)
+                printf("%d\n",n);
+        }
+}
