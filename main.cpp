@@ -318,14 +318,85 @@ int main() {
 //}
 
 //42.设N是一个四位数，它的9倍恰好是其反序数，求N。反序数就是将整数的数字倒过来形成的整数。例如：1234的反序数是4321。
-int main(){
-    int n,shi,bai,qian;
-    for (int r = 9001; r < 10000; r=r+10) {
-            shi=r/10%10;
-            bai=r/100%10;
-            qian=r/1000;
-            n=1000+shi*100+bai*10+1;
-            if(r=9*n)
-                printf("%d\n",n);
-        }
-}
+//int main(){
+//    int n,shi,bai,qian;
+//    for (int r = 9001; r < 10000; r=r+10) {
+//            shi=r/10%10;
+//            bai=r/100%10;
+//            qian=r/1000;
+//            n=1000+shi*100+bai*10+1;
+//            if(r=9*n)
+//                printf("%d\n",n);
+//        }
+//}
+
+//选择排序
+//int main() {
+//    int a[5] = {4, 1, 6, 9, 3};
+//    int n = 5, i, j,temp;
+//    for (i = 0; i < n; ++i) {
+//        int min = i;
+//        for (j = i + 1; j < n; ++j) {
+//            if (a[j] < a[min])
+//            min=j;
+//        }
+//        if (min != i) {
+//            temp = a[i];
+//            a[i] = a[min];
+//            a[min] = temp;
+//        }
+//    }
+//    for (int k = 0; k < n; ++k) {
+//        printf("%d",a[k]);
+//    }
+//}
+
+//冒泡排序
+//void bubblesort(int a[],int n){
+//    int i,j,temp;
+//    for (i = 0; i < n-1; ++i)
+//    {   bool flag= false;
+//        for (j = n-1; j > i; j--)
+//        {
+//            if(a[j]<a[j-1])
+//            {
+//                temp=a[j];
+//                a[j]=a[j-1];
+//                a[j-1]=temp;
+//                flag = true;
+//            }
+//        }
+//        if (flag==false)
+//            break;
+//    }
+//    for (int k = 0; k < n; ++k) {
+//        printf("%d",a[k]);
+//    }
+//}
+//int main(){
+//    int a[5]={4, 1, 6, 9, 3};
+//    bubblesort(a,5);
+//}
+
+//直接插入排序
+//void throughsort(int a[], int n) {
+//    int temp;
+//    int i, j;
+//    for (i = 1; i < n; ++i) {
+//        if (a[i] < a[i - 1]) {
+//            temp = a[i];
+//            for (j = i - 1; j >= 0 && a[j] > temp; --j) {
+//                a[j + 1] = a[j];
+//            }
+//            a[j + 1] = temp;
+//        }
+//    }
+//    for (int k = 0; k < n; ++k) {
+//        printf("%d ", a[k]);
+//    }
+//}
+//int main() {
+//    int a[5] = {4, 1, 6, 9, 3};
+//    throughsort(a, 5);
+//    return 0;
+//}
